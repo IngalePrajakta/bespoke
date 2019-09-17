@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        
+        <style>
+            /*header*/
+nav 
+{
+    background: white;
+}
+
+nav ul li a span 
+{
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: blue;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav ul li a span:hover 
+{
+  color: #5784f8;
+}
+.img-logo
+{
+  position: relative;
+  width:150px;
+  left:15px;
+}
+/*end header*/
+/*Footer*/
+
+footer.page-footer
+{
+  bottom: 0;
+  color: #fff;
+}
+.unique-color-dark
+{
+  background-color:#1c2331;
+}
+footer
+{
+  display: block;
+}
+.documentation footer
+{
+  padding-left: 0;
+
+}
+.text-center
+{
+  text-align:center;
+}
+.col-md-6,.col-md-2,.col-md-3
+{
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+body 
+            {
+                    background-color: #474e5d;
+                    font-family: 'Times New Roman';
+            }
+            *
+            {
+                box-sizing: border-box;
+            }
+
+        /*(the vertical ruler) */
+            .timeline 
+            {
+                position: relative;
+                max-width: 1200px;
+                /*margin: 0 auto;*/
+                margin-left: -19%;
+            }
+
+        /* (the vertical ruler) */
+            .timeline::after 
+            {
+                content: '';
+                position: absolute;
+                width: 6px;
+                background-color: white;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                /*margin-left: -3px;*/
+                margin-left: 25%;
+            }
+        /* Container around content */
+            .container 
+            {
+                padding: 10px 40px;
+                position: relative;
+                background-color: inherit;
+                width: 50%;
+            }
+
+        /* The circles on the timeline */
+            .container::after 
+            {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -17px;
+                background-color: white;
+                border: 4px solid #FF9F55;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            /* container to the left */
+                .left 
+                {
+                    left: 0;
+                }
+
+            /* container to the right */
+                .right 
+                {
+                    left: 50%;
+                }
+
+            /* Add arrows to the left container (pointing right) */
+                .left::before 
+                {
+                    content: " ";
+                    height: 0;
+                    position: absolute;
+                    top: 22px;
+                    width: 0;
+                    z-index: 1;
+                    right: 30px;
+                    border: medium solid white;
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent white;
+                }
+
+            /* Add arrows to the right container (pointing left) */
+                .right::before 
+                {
+                    content: " ";
+                    height: 0;
+                    position: absolute;
+                    top: 22px;
+                    width: 0;
+                    z-index: 1;
+                    left: 30px;
+                    border: medium solid white;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent white transparent transparent;
+                }
+
+            /* Fix the circle for containers on the right side */
+                .right::after 
+                {
+                    left: -16px;
+                }
+
+            /* The actual content */
+                .content 
+                {
+                    padding: 5px 10px;
+                    background-color: white;
+                    position: relative;
+                    border-radius: 6p;
+                }
+            /*background image of content*/
+                .image
+                {
+                    background-image: url("../assests/img1.jpg");
+                    background-size: cover;
+                        margin-top: 3%;
+
+                }
+
+            /* Responsive timeline on screens less than 600px wide */
+                @media screen and (max-width: 600px) 
+                {
+                /* Place the timelime to the left */
+                    .timeline::after 
+                    {
+                        left: 31px;
+                    }
+            
+                    /* Full-width containers */
+                    .container 
+                    {
+                        width: 100%;
+                        padding-left: 70px;
+                        padding-right: 25px;
+                    }
+                    
+                    /* Make sure that all arrows are pointing leftwards */
+                    .container::before 
+                    {
+                        left: 60px;
+                        border: medium solid white;
+                        border-width: 10px 10px 10px 0;
+                        border-color: transparent white transparent transparent;
+                        }
+
+                    /* Make sure all circles are at the same spot */
+                    .left::after, .right::after 
+                    {
+                        left: 15px;
+                    }
+                    
+                    /* Make all right containers behave like the left ones */
+                    .right 
+                    {
+                        left: 0%;
+                    }
+                }
+        </style>
+    </head>
+    <body>
+         <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" >
+                <img src="../bop.png" class="img-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><span>Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/pricing.html"><span>Pricing</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about_us.html"><span>About Us</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/enquiry.html"><span>Enquiry</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="timeline">
+        <div class="container left" style="padding-left: 19%">
+            <div class="content image" >
+            <h2>Development of Orchestrator</h2>
+            <ul>
+                <li>Creating 3D Model</li>
+                <li>Creating Individual 3D Model Attribute</li>
+                <li>Segregation of 3D Model Option</li>
+            </ul>
+            </div>
+        </div>
+        <div class="container right" style="padding-right: 18%;">
+            <div class="content image">
+            <h2 style="padding-left: 12%;">
+                Development of Catlog
+            </h2>
+            <ul>
+                <li>Creating 3D Model Option Structure</li>
+                <li>Intigrating of 3D Model Option with Catlog</li>
+                <li>Mapping of Attribute 3D Model Option</li>  
+             </ul>
+             </div>
+        </div>
+        <div class="container left" style="padding-left: 24%;"> 
+             <div class="content image">
+            <h2 style="padding-left: 9%;">
+              Development of Shopping Cart
+            </h2>
+            </div>
+        
+        </div>
+        <div class="container right" style="padding-right: 11%">
+            <div class="content image">
+            <h2>Development and Intigrating View Port</h2>
+            </div>
+        </div>
+        <div class="container left" style="padding-left: 7%;">
+    
+            <div class="content image">
+            <h2>Intigrating a View Port Using Your Website</h2>
+            </div>
+            
+        </div>
+        <div class="container right" style="padding-right: 8%;">
+            <div class="content image">
+            <h2>Make Your User Customize There are Own Product </h2>
+            </div>
+        </div>
+    </div>
+
+
+    <br /> <br /> <br /> <br />
+ <!--footer-->
+ <footer class="page-footer font-small unique-color-dark">
+        <div style="background-color: #6351ce;">
+          <div class="">
+            <div class="row py-4">
+              <div class="col-md-6">
+                <h6 class="mb-0">Get in touch</h6>
+              </div>
+              <div class="col-md-6">
+                <!-- Facebook -->
+                <a class="fb-ic">
+                  <i class="fab fa-facebook-f white-text mr-4"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic">
+                  <i class="fab fa-twitter white-text mr-4"> </i>
+                </a>
+                <!-- Google +-->
+                <a class="gplus-ic">
+                  <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic">
+                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="ins-ic">
+                  <i class="fab fa-instagram white-text"> </i>
+                </a>
+      
+            </div>
+      
+            </div>
+      
+          </div>
+        </div>
+      <!--Footer Links -->
+        <div class="text-center text-md-left mt-5">
+          <div class="row mt-3">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+      
+              <!-- Content -->
+              <h6 class="text-uppercase font-weight-bold">BOP Consultancy and Services</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                consectetur
+                adipisicing elit.</p>
+      
+            </div>
+      
+            <!-- Grid column -->
+            <div class="col-md-2 ">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase">Products</h6>
+              <hr class="deep-purple" style="width: 60px;">
+              <p>
+                <a href="#!">link</a>
+              </p>
+              <p>
+                <a href="#!">link</a>
+              </p>
+              <p>
+                <a href="#!">link</a>
+              </p>
+              <p>
+                <a href="#!">link</a>
+              </p>
+      
+            </div>
+      
+            <!-- Grid column -->
+            <div class="col-md-3">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase">Useful links</h6>
+              <hr class="deep-purple" style="width: 60px;">
+              <p>
+                <a href="#!">Your Account</a>
+              </p>
+              <p>
+                <a href="#!">Become an Affiliate</a><!--connect person or ,organization-->
+              </p>
+              <p>
+                <a href="#!">Shipping Rates</a>
+              </p>
+              <p>
+                <a href="#!">Help</a>
+              </p>
+      
+            </div>
+      
+            <!-- Grid column -->
+            <div class="col-md-4">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase">Contact</h6>
+              <hr class="deep-purple" style="width: 60px;">
+              <p>
+                <i class="fas fa-home mr-3"></i>Olympia Baner, Pune</p>
+              <p>
+                <i class="fas fa-envelope mr-3"></i>bopconsultancy@.com</p>
+              <p>
+                <i class="fas fa-phone mr-3"></i> +91-9960255106 </p>
+              <p>
+                <i class="fas fa-print mr-3"></i> +91-9960255106</p>
+      
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+   
+    </body>
+</html>
